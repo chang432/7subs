@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import MenuItem from './components/MenuItem';
-import menuJson from './data/menu.json'
-import scribble from './assets/scribble.png'
+import menuJson from './data/menu.json';
 import HomePage from './components/HomePage';
-import HoursPage from './components/HoursPage'
+import HoursPage from './components/HoursPage';
 import ContactPage from './components/ContactPage';
+
+import Scribble from './assets/scribble.png';
+import Logo from './assets/logo.png';
+import Dot from './assets/dot.png';
 
 function App() {
 
@@ -57,19 +58,19 @@ function App() {
   }
 
   const tabSubsStyle = {
-    'background-image': showSubsBackground ? `url(${scribble})` : 'none'
+    'background-image': showSubsBackground ? `url(${Scribble})` : 'none'
   };
 
   const tabWrapsStyle = {
-    'backgroundImage': showWrapsBackground ? `url(${scribble})` : 'none'
+    'backgroundImage': showWrapsBackground ? `url(${Scribble})` : 'none'
   };
   
   const tabSaladsStyle = {
-    'backgroundImage': showSaladsBackground ? `url(${scribble})` : 'none'
+    'backgroundImage': showSaladsBackground ? `url(${Scribble})` : 'none'
   };
   
   const tabHotDogsStyle = {
-    'backgroundImage': showHotDogsBackground ? `url(${scribble})` : 'none'
+    'backgroundImage': showHotDogsBackground ? `url(${Scribble})` : 'none'
   };
 
   const headerTabMenuStyle = {
@@ -180,15 +181,15 @@ function App() {
     <div style={mainDivStyle}>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Knewave&display=swap"></link>
       <div className='flex justify-between items-center h-20 px-10 pt-10' style={{'z-index': '1'}}>
-        <img className='w-80' src='./src/assets/logo.png'></img>
+        <img className='w-80' src={Logo}></img>
         {/* <h1 className='text-4xl'>617-232-7070</h1> */}
         <div className='flex justify-between items-center space-x-10 pr-8'>
         <button className='text-2xl' onClick={() => headerTabClicked('home')} onMouseEnter={() => headerTabHovered('home')} onMouseLeave={() => headerTabUnhovered('home')} style={{...headerTabStyle, ...headerTabHomeStyle}}>HOME</button>
-          <img src="./src/assets/dot.png" className='w-4 h-4'/>
+          <img src={Dot} className='w-4 h-4'/>
           <button className='text-2xl' onClick={() => headerTabClicked('menu')} onMouseEnter={() => headerTabHovered('menu')} onMouseLeave={() => headerTabUnhovered('menu')} style={{...headerTabStyle, ...headerTabMenuStyle}}>MENU</button>
-          <img src="./src/assets/dot.png" className='w-4 h-4'/>
+          <img src={Dot} className='w-4 h-4'/>
           <button className='text-2xl' onClick={() => headerTabClicked('hours')} onMouseEnter={() => headerTabHovered('hours')} onMouseLeave={() => headerTabUnhovered('hours')} style={{...headerTabStyle, ...headerTabHoursStyle}}>HOURS</button>
-          <img src="./src/assets/dot.png" className='w-4 h-4'/>
+          <img src={Dot} className='w-4 h-4'/>
           <button className='text-2xl' onClick={() => headerTabClicked('contact')} onMouseEnter={() => headerTabHovered('contact')} onMouseLeave={() => headerTabUnhovered('contact')} style={{...headerTabStyle, ...headerTabContactStyle}}>CONTACT</button>
         </div>
       </div>

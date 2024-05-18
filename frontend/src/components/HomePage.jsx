@@ -1,5 +1,7 @@
 import React from "react"
 
+import StoreFront from '../assets/storefront.png';
+
 const titleStyle = {
     'font-family': 'Joti One',
     'font-size': '4.5rem',
@@ -16,7 +18,7 @@ const subTitleStyle = {
 const HomePage = ({style}) => {
     return (
         <div className="flex justify-center items-center h-screen space-x-24 pb-48" style={style}>
-            <img src="./src/assets/storefront.png" style={{'height': '30rem'}}/>
+            <img src={StoreFront} style={{'height': '30rem'}}/>
             <div className="flex flex-col items-center">
                 <h1 className="w-fit" style={{...titleStyle}}>WE'RE BACK!</h1>
                 <h1 className="w-fit" style={subTitleStyle}>OPEN LONGER HOURS</h1>
