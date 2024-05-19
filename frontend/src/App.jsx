@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import MenuItem from './components/MenuItem';
 import menuJson from './data/menu.json';
 import HomePage from './components/HomePage';
@@ -35,17 +36,15 @@ function App() {
 
   const mainDivStyle = {
     backgroundColor: '#CC3233',
-    'width': '100%',
-    'height': '100%',
     'z-index': '0'
   };
   
   const tabStyle = {
     'font-family': 'Tahoma',
-    'font-size': '1rem',
+    // 'font-size': '1rem',
     'font-weight': '900',
     // 'border': '1px solid',
-    'padding': '1rem 2rem',
+    // 'padding': '1rem 2rem',
     'background-repeat': 'no-repeat',
     'background-position': 'center',
     'background-size': 'contain'
@@ -178,31 +177,30 @@ function App() {
   }
 
   return (
-    <div style={mainDivStyle}>
+    <div className='flex flex-col flex-shrink' style={mainDivStyle}>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Knewave&display=swap"></link>
-      <div className='flex justify-between items-center h-20 px-10 pt-10' style={{'z-index': '1'}}>
-        <img className='w-80' src={Logo}></img>
-        {/* <h1 className='text-4xl'>617-232-7070</h1> */}
-        <div className='flex justify-between items-center space-x-10 pr-8'>
-        <button className='text-2xl' onClick={() => headerTabClicked('home')} onMouseEnter={() => headerTabHovered('home')} onMouseLeave={() => headerTabUnhovered('home')} style={{...headerTabStyle, ...headerTabHomeStyle}}>HOME</button>
-          <img src={Dot} className='w-4 h-4'/>
-          <button className='text-2xl' onClick={() => headerTabClicked('menu')} onMouseEnter={() => headerTabHovered('menu')} onMouseLeave={() => headerTabUnhovered('menu')} style={{...headerTabStyle, ...headerTabMenuStyle}}>MENU</button>
-          <img src={Dot} className='w-4 h-4'/>
-          <button className='text-2xl' onClick={() => headerTabClicked('hours')} onMouseEnter={() => headerTabHovered('hours')} onMouseLeave={() => headerTabUnhovered('hours')} style={{...headerTabStyle, ...headerTabHoursStyle}}>HOURS</button>
-          <img src={Dot} className='w-4 h-4'/>
-          <button className='text-2xl' onClick={() => headerTabClicked('contact')} onMouseEnter={() => headerTabHovered('contact')} onMouseLeave={() => headerTabUnhovered('contact')} style={{...headerTabStyle, ...headerTabContactStyle}}>CONTACT</button>
+      <div className='flex flex-wrap justify-between items-center h-20 px-10 pt-10' style={{'z-index': '1'}}>
+        <img className='w-80 flex-shrink-0' src={Logo}></img>
+        <div className='flex justify-between items-center space-x-8 pr-8 min-w-0 flex-shrink'>
+            <button className='min-w-0 flex-shrink' onClick={() => headerTabClicked('home')} onMouseEnter={() => headerTabHovered('home')} onMouseLeave={() => headerTabUnhovered('home')} style={{...headerTabStyle, ...headerTabHomeStyle}}>HOME</button>
+            <img src={Dot} className='w-4 h-4 flex-shrink-0'/>
+            <button className='min-w-0 flex-shrink' onClick={() => headerTabClicked('menu')} onMouseEnter={() => headerTabHovered('menu')} onMouseLeave={() => headerTabUnhovered('menu')} style={{...headerTabStyle, ...headerTabMenuStyle}}>MENU</button>
+            <img src={Dot} className='w-4 h-4 flex-shrink-0'/>
+            <button className='min-w-0 flex-shrink' onClick={() => headerTabClicked('hours')} onMouseEnter={() => headerTabHovered('hours')} onMouseLeave={() => headerTabUnhovered('hours')} style={{...headerTabStyle, ...headerTabHoursStyle}}>HOURS</button>
+            <img src={Dot} className='w-4 h-4 flex-shrink-0'/>
+            <button className='min-w-0 flex-shrink' onClick={() => headerTabClicked('contact')} onMouseEnter={() => headerTabHovered('contact')} onMouseLeave={() => headerTabUnhovered('contact')} style={{...headerTabStyle, ...headerTabContactStyle}}>CONTACT</button>
         </div>
       </div>
-      <div className="mt-12 ml-12 mr-12 min-h-screen" style={{'z-index': '0', 'border-radius': '0 0 0 0'}}>
+      <div className="flex flex-col mt-12 ml-12 mr-12 min-h-screen" style={{'z-index': '0', 'border-radius': '0 0 0 0'}}>
         <div style={{...menuPageStyle}}>
-          <div className='h-20 mb-1 flex items-center space-x-4' style={{'backgroundColor': 'rgb(239 223 208)', 'border-radius': '4rem 4rem 0 0'}}>
-            <button onClick={() => tabClicked(menuJson.subs, 'subs')} onMouseEnter={() => tabHovered('subs')} onMouseLeave={() => tabUnhovered('subs')} className='' style={{...tabStyle, ...tabSubsStyle}}>Specialty Subs</button>
-            <button onClick={() => tabClicked(menuJson.wraps, 'wraps')} onMouseEnter={() => tabHovered('wraps')} onMouseLeave={() => tabUnhovered('wraps')} style={{...tabStyle, ...tabWrapsStyle}}>Wraps</button>
-            <button onClick={() => tabClicked(menuJson.salads, 'salads')} onMouseEnter={() => tabHovered('salads')} onMouseLeave={() => tabUnhovered('salads')} style={{...tabStyle, ...tabSaladsStyle}}>Salads</button>
-            <button onClick={() => tabClicked(menuJson.hot_dogs, 'hotdogs')} onMouseEnter={() => tabHovered('hotdogs')} onMouseLeave={() => tabUnhovered('hotdogs')} style={{...tabStyle, ...tabHotDogsStyle}}>Hot Dogs</button>
+          <div className='h-20 mb-1 flex justify-center items-center' style={{'backgroundColor': 'rgb(239 223 208)', 'border-radius': '4rem 4rem 0 0'}}>
+            <button className='py-4 text-xs px-2 w-20 h-16 sm:px-8 sm:w-48 sm:text-base' onClick={() => tabClicked(menuJson.subs, 'subs')} onMouseEnter={() => tabHovered('subs')} onMouseLeave={() => tabUnhovered('subs')} style={{...tabStyle, ...tabSubsStyle}}>Specialty Subs</button>
+            <button className='py-4 text-xs px-2 w-20 h-16 sm:px-8 sm:w-48 sm:text-base' onClick={() => tabClicked(menuJson.wraps, 'wraps')} onMouseEnter={() => tabHovered('wraps')} onMouseLeave={() => tabUnhovered('wraps')} style={{...tabStyle, ...tabWrapsStyle}}>Wraps</button>
+            <button className='py-4 text-xs px-2 w-20 h-16 sm:px-8 sm:w-48 sm:text-base' onClick={() => tabClicked(menuJson.salads, 'salads')} onMouseEnter={() => tabHovered('salads')} onMouseLeave={() => tabUnhovered('salads')} style={{...tabStyle, ...tabSaladsStyle}}>Salads</button>
+            <button className='py-4 text-xs px-2 w-20 h-16 sm:px-8 sm:w-48 sm:text-base' onClick={() => tabClicked(menuJson.hot_dogs, 'hotdogs')} onMouseEnter={() => tabHovered('hotdogs')} onMouseLeave={() => tabUnhovered('hotdogs')} style={{...tabStyle, ...tabHotDogsStyle}}>Hot Dogs</button>
           </div>
           <div style={{"backgroundColor": "rgb(239 223 208)"}}>
-            <div className="grid grid-cols-2 py-8" style={{"backgroundColor": "rgb(239 223 208)"}}>
+            <div className="grid grid-cols-1 md:grid-cols-2 py-8" style={{"backgroundColor": "rgb(239 223 208)"}}>
               {menuContentArray.items.map(entry => {
                 return <MenuItem name={entry.name} description={entry.description} price={entry.price}/>;
               })}
