@@ -191,10 +191,10 @@ function App() {
             <button className='min-w-0 flex-shrink' onClick={() => headerTabClicked('contact')} onMouseEnter={() => headerTabHovered('contact')} onMouseLeave={() => headerTabUnhovered('contact')} style={{...headerTabStyle, ...headerTabContactStyle}}>CONTACT</button>
         </div>
       </div>
-      <div className="flex flex-col mt-24 md:mt-16 mx-6 md:mx-12 min-h-screen" style={{'z-index': '0', 'border-radius': '0 0 0 0'}}>
+      <div className="flex flex-col mt-24 md:mt-16 mx-1 md:mx-12 min-h-screen" style={{'z-index': '0', 'border-radius': '0 0 0 0'}}>
         <div style={{...menuPageStyle}}>
-          <div className='h-24 mb-1 flex justify-center items-center space-x-2' style={{'backgroundColor': 'rgb(239 223 208)', 'border-radius': '4rem 4rem 0 0'}}>
-            <button className='py-4 text-sm w-28 h-16 md:px-8 md:w-52 md:text-lg' onClick={() => tabClicked(menuJson.subs, 'subs')} onMouseEnter={() => tabHovered('subs')} onMouseLeave={() => tabUnhovered('subs')} style={{...tabStyle, ...tabSubsStyle}}>Specialty Subs</button>
+          <div className='h-20 md:h-24 mb-1 flex justify-center items-center' style={{'backgroundColor': 'rgb(239 223 208)', 'border-radius': '4rem 4rem 0 0'}}>
+            <button className='py-4 text-sm w-24 h-16 md:px-8 md:w-52 md:text-lg' onClick={() => tabClicked(menuJson.subs, 'subs')} onMouseEnter={() => tabHovered('subs')} onMouseLeave={() => tabUnhovered('subs')} style={{...tabStyle, ...tabSubsStyle}}>Subs</button>
             <button className='py-4 text-sm w-24 h-16 md:px-8 md:w-52 md:text-lg' onClick={() => tabClicked(menuJson.wraps, 'wraps')} onMouseEnter={() => tabHovered('wraps')} onMouseLeave={() => tabUnhovered('wraps')} style={{...tabStyle, ...tabWrapsStyle}}>Wraps</button>
             <button className='py-4 text-sm w-24 h-16 md:px-8 md:w-52 md:text-lg' onClick={() => tabClicked(menuJson.salads, 'salads')} onMouseEnter={() => tabHovered('salads')} onMouseLeave={() => tabUnhovered('salads')} style={{...tabStyle, ...tabSaladsStyle}}>Salads</button>
             <button className='py-4 text-sm w-24 h-16 md:px-8 md:w-52 md:text-lg' onClick={() => tabClicked(menuJson.hot_dogs, 'hotdogs')} onMouseEnter={() => tabHovered('hotdogs')} onMouseLeave={() => tabUnhovered('hotdogs')} style={{...tabStyle, ...tabHotDogsStyle}}>Hot Dogs</button>
