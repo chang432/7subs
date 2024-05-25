@@ -36,6 +36,8 @@ function App() {
 
   const mainDivStyle = {
     backgroundColor: '#CC3233',
+    height: showMenu ? null : '100vh',
+    'min-height': '100vh',
     'z-index': '0'
   };
   
@@ -177,7 +179,7 @@ function App() {
   }
 
   return (
-    <div className='flex flex-col flex-shrink' style={mainDivStyle}>
+    <div className='flex flex-col flex-shrink border border-black' style={mainDivStyle}>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Knewave&display=swap"></link>
       <div className='flex flex-wrap justify-center md:justify-between items-center h-20 px-10 pt-10' style={{'z-index': '1'}}>
         <img className='w-80 flex-shrink-0' src={Logo}></img>
@@ -191,7 +193,7 @@ function App() {
             <button className='min-w-0 flex-shrink' onClick={() => headerTabClicked('contact')} onMouseEnter={() => headerTabHovered('contact')} onMouseLeave={() => headerTabUnhovered('contact')} style={{...headerTabStyle, ...headerTabContactStyle}}>CONTACT</button>
         </div>
       </div>
-      <div className="flex flex-col mt-24 md:mt-16 mx-1 md:mx-12 min-h-screen" style={{'z-index': '0', 'border-radius': '0 0 0 0'}}>
+      <div className="flex flex-col mt-24 md:mt-16 mx-1 md:mx-12 h-full" style={{'z-index': '0', 'justify-content': showMenu ? null : 'center'}}>
         <div style={{...menuPageStyle}}>
           <div className='h-20 md:h-24 mb-1 flex justify-center items-center' style={{'backgroundColor': 'rgb(239 223 208)', 'border-radius': '4rem 4rem 0 0'}}>
             <button className='py-4 text-sm w-24 h-16 md:px-8 md:w-52 md:text-lg' onClick={() => tabClicked(menuJson.subs, 'subs')} onMouseEnter={() => tabHovered('subs')} onMouseLeave={() => tabUnhovered('subs')} style={{...tabStyle, ...tabSubsStyle}}>Subs</button>
@@ -199,8 +201,8 @@ function App() {
             <button className='py-4 text-sm w-24 h-16 md:px-8 md:w-52 md:text-lg' onClick={() => tabClicked(menuJson.salads, 'salads')} onMouseEnter={() => tabHovered('salads')} onMouseLeave={() => tabUnhovered('salads')} style={{...tabStyle, ...tabSaladsStyle}}>Salads</button>
             <button className='py-4 text-sm w-24 h-16 md:px-8 md:w-52 md:text-lg' onClick={() => tabClicked(menuJson.hot_dogs, 'hotdogs')} onMouseEnter={() => tabHovered('hotdogs')} onMouseLeave={() => tabUnhovered('hotdogs')} style={{...tabStyle, ...tabHotDogsStyle}}>Hot Dogs</button>
           </div>
-          <div style={{"backgroundColor": "rgb(239 223 208)"}}>
-            <div className="grid grid-cols-1 md:grid-cols-2 py-8" style={{"backgroundColor": "rgb(239 223 208)"}}>
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 pt-8 mb-1 md:mb-12" style={{"backgroundColor": "rgb(239 223 208)", 'border-radius': '0 0 50px 50px'}}>
               {menuContentArray.items.map(entry => {
                 return <MenuItem name={entry.name} description={entry.description} price={entry.price}/>;
               })}

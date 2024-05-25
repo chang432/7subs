@@ -19,7 +19,7 @@ const MapsDiv = styled.div`
 
 const ContactPage = ({style}) => {
     return (
-        <div className="flex flex-col justify-center items-center h-screen pb-52 md:pb-24 space-y-2" style={style}>
+        <div className="flex flex-col justify-center items-center pb-52 md:pb-24 space-y-2" style={style}>
             <h1 className="w-fit text-lg md:text-2xl" style={{color: '#FFCC33'}}>617-232-7070</h1>
             <h1 className="w-fit text-lg md:text-2xl">Call us to place an order for pickup</h1>
             <h1 className="w-fit text-lg md:text-2xl pt-5 md:pt-20">1 Centre Street, Brookline, MA 02446</h1>

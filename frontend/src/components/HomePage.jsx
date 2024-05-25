@@ -11,7 +11,7 @@ const titleStyle = {
 
 const HomePage = ({style}) => {
     return (
-        <div className="flex flex-wrap-reverse justify-center items-center h-screen pb-36" style={style}>
+        <div className="flex flex-wrap-reverse justify-center items-center" style={style}>
             <img className="flex-shrink min-w-72 w-1/2 mb-32 md:mb-0" src={StoreFront}/>
             <div className="flex flex-col items-center flex-shrink min-w-0 px-10">
                 <h1 className="md:text-7xl text-5xl" style={{...titleStyle}}>WE'RE BACK!</h1>
